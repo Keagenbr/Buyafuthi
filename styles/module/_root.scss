@@ -1,0 +1,35 @@
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --txt-clr-neutral: hsl(175, 0%, 80%);
+  --txt-clr-contrast: hsl(175, 25%, 10%);
+  --main-bg: hsl(174, 100%, 20%);
+  --nav-bg: hsl(174, 100%, 16%);
+  --footer-bg: hsl(174, 60%, 65%);
+  --img-shadow: hsl(174, 100%, 4%);
+  --img-overlay: hsla(173, 100%, 8%, 65%);
+  --gradient: linear-gradient(85deg, hsl(174, 100%, 16%), hsl(174, 100%, 30%));
+  --font: Jost, serif;
+}
+
+body {
+  background-color: var(--main-bg);
+  font-family: var(--font);
+  color: var(--txt-clr-neutral);
+  //   overflow: scroll;
+}
+
+section {
+  margin: 0 8%;
+}
+
+.img {
+  border-radius: 0.75em;
+  box-shadow: 0 0 2rem 0 var(--img-shadow);
+}
