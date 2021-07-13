@@ -49,13 +49,12 @@ h2 {
   place-items: center;
   min-height: 3rem;
 }
-
-.logo {
+.nav-logo .logo {
   width: 2rem;
   height: 2rem;
   margin-right: 0.25em;
 }
-.logo + h4 {
+.nav-logo .logo + h4 {
   font-size: 1.313rem;
   font-weight: 800;
   text-transform: uppercase;
@@ -66,10 +65,22 @@ h2 {
   align-items: center;
 }
 .nav-items li {
+  position: relative;
   list-style-type: none;
+  margin-block: 0.5rem;
 }
 .nav-items li + li {
-  padding-left: 1em;
+  margin-left: 1em;
+}
+.nav-items li + li::before {
+  display: block;
+  position: absolute;
+  content: "";
+  width: 0.065rem;
+  height: 1rem;
+  inset-block: 25% 0;
+  inset-inline: -25% 0;
+  background-color: var(--txt-clr-contrast);
 }
 .nav-items li::marker {
   display: none;
@@ -93,6 +104,20 @@ h2 {
   color: var(--txt-clr-neutral);
   font-size: 0.75rem;
   font-weight: 200;
+}
+
+/*Footer*/
+footer {
+  background-color: var(--footer-bg);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+}
+footer .logo {
+  display: flex;
+  align-items: center;
+  margin: 0.5em 0;
 }
 
 /* header */
