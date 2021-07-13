@@ -25,7 +25,7 @@ body {
 }
 
 section {
-  margin: 0 8%;
+  margin: 0 5%;
 }
 
 .img {
@@ -68,6 +68,9 @@ h2 {
 .nav-items li {
   list-style-type: none;
 }
+.nav-items li + li {
+  padding-left: 1em;
+}
 .nav-items li::marker {
   display: none;
 }
@@ -87,12 +90,9 @@ h2 {
 .nav-items li a {
   text-decoration: none;
   text-transform: capitalize;
+  color: var(--txt-clr-neutral);
   font-size: 0.75rem;
   font-weight: 200;
-  color: var(--txt-clr-neutral);
-}
-.nav-items li + li {
-  padding-left: 1em;
 }
 
 /* header */
@@ -165,6 +165,7 @@ h2 {
   margin: 1rem 2rem;
 }
 
+/*Collaborations*/
 .collaborations {
   display: flex;
   flex-direction: column;
@@ -186,11 +187,36 @@ h2 {
   gap: 1em;
   place-items: center;
 }
-.collaborations figure {
+.collaborations-items figure {
   margin: 0.5em;
 }
-.collaborations figcaption {
+.collaborations-items figcaption {
   text-align: center;
+}
+
+/*Plastic to Fabric*/
+.PTF {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  margin-block: 2em;
+}
+.PTF-items {
+  display: grid;
+  width: 90%;
+  margin: 1em auto;
+  place-content: center;
+  grid-template-columns: repeat(auto-fit, 13rem);
+  gap: 1.5em;
+}
+.PTF-items figure {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+}
+.PTF-items figcaption {
+  text-align: center;
+  max-width: 25ch;
 }
 
 /*# sourceMappingURL=style.css.map */
