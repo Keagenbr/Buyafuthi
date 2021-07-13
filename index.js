@@ -1,3 +1,1 @@
-function sendWhatsapp(whatsapp) {
-    console.log(whatsapp);
-}
+alert('This website is under contruction');
