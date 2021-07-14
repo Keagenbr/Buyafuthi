@@ -7,11 +7,11 @@
 }
 
 :root {
-  --txt-clr-neutral: hsl(175, 0%, 80%);
+  --txt-clr-neutral: hsl(175, 0%, 90%);
   --txt-clr-contrast: hsl(175, 25%, 10%);
   --main-bg: hsl(174, 100%, 20%);
   --nav-bg: hsl(174, 100%, 16%);
-  --footer-bg: hsl(174, 60%, 65%);
+  --footer-bg: hsl(174, 50%, 50%);
   --img-shadow: hsl(174, 100%, 4%);
   --img-overlay: hsla(173, 100%, 8%, 65%);
   --gradient: linear-gradient(85deg, hsl(174, 100%, 16%), hsl(174, 100%, 30%));
@@ -38,6 +38,29 @@ h2 {
   font-weight: 800;
 }
 
+.logo {
+  width: 2rem;
+  height: 2rem;
+  margin-right: 0.25em;
+}
+.logo + h4 {
+  font-size: 1.313rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+li::marker {
+  display: none;
+}
+
+a {
+  text-decoration: none;
+  text-transform: capitalize;
+  color: var(--txt-clr-neutral);
+  font-size: 0.75rem;
+  font-weight: 200;
+}
+
 /* navigtion */
 .nav {
   background-color: var(--nav-bg);
@@ -48,16 +71,6 @@ h2 {
   display: flex;
   place-items: center;
   min-height: 3rem;
-}
-.nav-logo .logo {
-  width: 2rem;
-  height: 2rem;
-  margin-right: 0.25em;
-}
-.nav-logo .logo + h4 {
-  font-size: 1.313rem;
-  font-weight: 800;
-  text-transform: uppercase;
 }
 
 .nav-items {
@@ -98,26 +111,20 @@ h2 {
   width: 100%;
   background-color: var(--img-shadow);
 }
-.nav-items li a {
-  text-decoration: none;
-  text-transform: capitalize;
-  color: var(--txt-clr-neutral);
-  font-size: 0.75rem;
-  font-weight: 200;
-}
 
 /*Footer*/
-footer {
+.footer {
   background-color: var(--footer-bg);
-  display: flex;
-  flex-direction: column;
+  display: grid;
   width: 100%;
-  justify-content: center;
+  place-items: center;
 }
-footer .logo {
+.footer h4 {
+  text-shadow: 0 1em 0.5em 0 var(--txt-clr-contrast);
+}
+.footer-logo {
   display: flex;
   align-items: center;
-  margin: 0.5em 0;
 }
 
 /* header */
