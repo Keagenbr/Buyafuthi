@@ -98,10 +98,7 @@ a {
   // height: 20rem;
   place-items: center;
 
-  h4 {
-    // color: rgb(161, 44, 44);
-    text-shadow: 0 1em 0.5em 0 var(--txt-clr-contrast);
-  }
+  padding: 0.75em 0;
 
   &-logo {
     display: flex;
@@ -109,8 +106,24 @@ a {
     // align-items: center;
     // margin: 0.5em 0;
 
-    // .logo {
-    //   width: 0.25rem;
-    // }
+    h4 {
+      color: hsl(175, 100%, 90%);
+      // text-shadow: 0 1em 0.5em 0 var(--txt-clr-contrast);
+    }
+  }
+
+  .links li,
+  .contact li {
+    list-style-type: none;
+    line-height: 1.25;
+    padding-block: 0.05em;
+  }
+  .links,
+  .contact {
+    margin: 1em 0;
+    max-width: 15ch;
+  }
+  a {
+    font-size: 0.9rem;
   }
 }

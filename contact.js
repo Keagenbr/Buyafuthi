@@ -1,40 +1,44 @@
-(function sendWhatsapp(whatsapp) {
+getInputValues = () =>{
+
     let url = 'https://wa.me/27626685787?text=';
+
+    console.log(url);
     let msg = `Hello
 
-    Name: ${document.getElementById("name").value == "" ? "Full name and surname" : document.getElementById("name").value}
+        Name: ${document.getElementById("name").value == "" ? "Full name and surname" : 
+            document.getElementById("name").value}
 
-    Email:${document.getElementById("email").value == "" ? "example@mail.com" :
-        document.getElementById("email").value}
+        Email:${document.getElementById("email").value == "" ? "example@mail.com" :
+            document.getElementById("email").value}
 
-    Number:${document.getElementById("number").value == "" ? "+27 62 668 5787" :
-        document.getElementById("number").value}
-    
-    Subject:${document.getElementById("subject").value == "" ? "subject" :
-        document.getElementById("subject").value}
+        Number:${document.getElementById("number").value == "" ? "+27 62 668 5787" :
+            document.getElementById("number").value}
 
-    Message:${document.getElementById("message").value == "" ? "message" :
-        document.getElementById("message").value}`;
+        Subject:${document.getElementById("subject").value == "" ? "subject" :
+            document.getElementById("subject").value}
 
-    // const link = url + encodeURI(msg);
+        Message:${document.getElementById("message").value == "" ? "message" :
+            document.getElementById("message").value}
 
-    const submit = document.getElementById('submit');
+        `;
 
-    submit.setAttribute('href', url + encodeURI(msg));
-
-
-    console.log(submit);
     console.log(msg);
 
-    // console.log(msg);
 
-}())
-// Object.assign(document.createElement('a'),{href: `url + encodeURI(msg)`}).onclick();
-// const click = document.getElementById("submit").addEventListener("click", function (e) {
-//     e.preventDefault();
-// });
+    let link = url + encodeURI(msg);
+    console.log(link);
 
-// console.log(click);
+    const submit = document.getElementById('submit');
+    submit.setAttribute('href', url + encodeURI(msg));
+}
+
+const submit = document.getElementById('submit');
+
+submit.addEventListener('click',function(e){
+    getInputValues();
+
+    e.preventDefault();
+});
 
 
 // alert('this site is being worked on');

@@ -118,13 +118,28 @@ a {
   display: grid;
   width: 100%;
   place-items: center;
-}
-.footer h4 {
-  text-shadow: 0 1em 0.5em 0 var(--txt-clr-contrast);
+  padding: 0.75em 0;
 }
 .footer-logo {
   display: flex;
   align-items: center;
+}
+.footer-logo h4 {
+  color: #ccfffb;
+}
+.footer .links li,
+.footer .contact li {
+  list-style-type: none;
+  line-height: 1.25;
+  padding-block: 0.05em;
+}
+.footer .links,
+.footer .contact {
+  margin: 1em 0;
+  max-width: 15ch;
+}
+.footer a {
+  font-size: 0.9rem;
 }
 
 /* header */
@@ -173,7 +188,7 @@ a {
   display: grid;
   width: 100%;
   margin-top: 1rem;
-  grid-template-columns: repeat(auto-fit, 20rem);
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   gap: 0.5em;
   place-content: center;
   place-items: center;
@@ -238,7 +253,7 @@ a {
   width: 90%;
   margin: 1em auto;
   place-content: center;
-  grid-template-columns: repeat(auto-fit, 13rem);
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
   gap: 1.5em;
 }
 .PTF-items figure {
