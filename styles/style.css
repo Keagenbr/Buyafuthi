@@ -55,7 +55,7 @@ li::marker {
 
 a {
   text-decoration: none;
-  text-transform: capitalize;
+  text-transform: uppercase;
   color: var(--txt-clr-neutral);
   font-size: 0.75rem;
   font-weight: 200;
@@ -101,6 +101,7 @@ a {
 .nav-items li .active {
   display: block;
   position: relative;
+  font-weight: 300;
 }
 .nav-items li .active::after {
   display: block;
@@ -117,29 +118,67 @@ a {
   background-color: var(--footer-bg);
   display: grid;
   width: 100%;
-  place-items: center;
   padding: 0.75em 0;
 }
 .footer-logo {
   display: flex;
   align-items: center;
+  justify-self: center;
 }
 .footer-logo h4 {
   color: #ccfffb;
 }
-.footer .links li,
-.footer .contact li {
+.footer .social {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 1em;
+}
+.footer .social .facebook,
+.footer .social .instagram {
+  display: inline-flex;
+  align-items: center;
+  justify-content: left;
+  min-width: 7.75rem;
+  background-color: var(--img-overlay);
+  padding: 0.15em 0.5em;
+  margin: 0.25em auto;
+  border-radius: 10000rem;
+}
+.footer .social .facebook a,
+.footer .social .instagram a {
+  padding-right: 0.75em;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 0.75rem;
+}
+.footer li {
   list-style-type: none;
-  line-height: 1.25;
-  padding-block: 0.05em;
+  line-height: 1.5;
+  text-align: left;
+  display: flex;
+  justify-content: left;
+  justify-items: left;
+  position: relative;
 }
 .footer .links,
 .footer .contact {
-  margin: 1em 0;
-  max-width: 15ch;
+  margin: 1em 10% 0 25%;
+  max-width: 20ch;
 }
 .footer a {
+  display: inline-block;
   font-size: 0.9rem;
+  padding-left: 0.5rem;
+}
+.footer svg {
+  width: 1rem;
+  height: 1rem;
+  display: inline-block;
+  position: relative;
+  align-self: center;
 }
 
 /* header */
@@ -179,6 +218,7 @@ a {
   pointer-events: none;
 }
 
+/*Products*/
 .products {
   display: flex;
   flex-direction: column;
