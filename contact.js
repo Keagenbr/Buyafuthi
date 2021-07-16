@@ -2,7 +2,7 @@ getInputValues = () =>{
 
     let url = 'https://wa.me/27626685787?text=';
 
-    console.log(url);
+    // console.log(url);
     let msg = `Hello
 
         Name: ${document.getElementById("name").value == "" ? "Full name and surname" : 
@@ -22,11 +22,11 @@ getInputValues = () =>{
 
         `;
 
-    console.log(msg);
+    // console.log(msg);
 
 
     let link = url + encodeURI(msg);
-    console.log(link);
+    // console.log(link);
 
     const submit = document.getElementById('submit');
     submit.setAttribute('href', url + encodeURI(msg));
@@ -34,11 +34,13 @@ getInputValues = () =>{
 
 const submit = document.getElementById('submit');
 
-submit.addEventListener('click',function(e){
-    getInputValues();
+submit.addEventListener('click', async function sendWhatsapp(e){
 
-    e.preventDefault();
+
+    getInputValues();
+    
+    // e.preventDefault();
 });
 
 
-// alert('this site is being worked on');
+alert('this site is being worked on');
