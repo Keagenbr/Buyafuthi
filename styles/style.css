@@ -22,6 +22,22 @@ body {
   background-color: var(--main-bg);
   font-family: var(--font);
   color: var(--txt-clr-neutral);
+  cursor: default;
+}
+body ::selection {
+  background-color: var(--txt-clr-neutral);
+  color: var(--nav-bg);
+}
+
+.about {
+  background-color: #fcfcfc;
+  font-family: var(--font);
+  color: var(--txt-clr-contrast);
+}
+
+.about ::selection {
+  background-color: var(--main-bg);
+  color: var(--txt-clr-neutral);
 }
 
 section {
@@ -30,7 +46,12 @@ section {
 
 .img {
   border-radius: 0.75em;
-  box-shadow: 0 0 2rem 0 var(--img-shadow);
+  box-shadow: 0 0 1rem 0 var(--img-shadow);
+}
+
+.logo-bg {
+  border-radius: 50%;
+  box-shadow: 0 0 1rem 0 var(--img-shadow);
 }
 
 h2 {
@@ -44,7 +65,7 @@ h2 {
   margin-right: 0.25em;
 }
 .logo + h4 {
-  font-size: 1.313rem;
+  font-size: 1.25rem;
   font-weight: 800;
   text-transform: uppercase;
 }
@@ -59,6 +80,7 @@ a {
   color: var(--txt-clr-neutral);
   font-size: 0.75rem;
   font-weight: 200;
+  cursor: pointer;
 }
 
 /* navigtion */
@@ -163,15 +185,16 @@ a {
   justify-items: left;
   position: relative;
 }
+.footer li a {
+  position: relative;
+  display: inline-block;
+  font-size: 0.75rem;
+  padding-left: 0.5rem;
+}
 .footer .links,
 .footer .contact {
   margin: 1em 10% 0 25%;
   max-width: 20ch;
-}
-.footer a {
-  display: inline-block;
-  font-size: 0.9rem;
-  padding-left: 0.5rem;
 }
 .footer svg {
   width: 1rem;
@@ -218,6 +241,9 @@ a {
   pointer-events: none;
 }
 
+/*====
+HOME SECTION
+=====*/
 /*Products*/
 .products {
   display: flex;
@@ -304,6 +330,109 @@ a {
 .PTF-items figcaption {
   text-align: center;
   max-width: 25ch;
+}
+
+/*====
+ABOUT SECTION
+=====*/
+.who-we-are,
+.name-and-logo,
+.our-fabric,
+.packaging,
+.founder {
+  display: grid;
+  place-items: center;
+}
+.who-we-are h2 + img,
+.name-and-logo h2 + img,
+.our-fabric h2 + img,
+.packaging h2 + img,
+.founder h2 + img {
+  margin-block: 1em;
+}
+.who-we-are img + p,
+.name-and-logo img + p,
+.our-fabric img + p,
+.packaging img + p,
+.founder img + p {
+  margin-block: 1.5em;
+}
+.who-we-are p,
+.name-and-logo p,
+.our-fabric p,
+.packaging p,
+.founder p {
+  max-width: 32ch;
+  line-height: 1.25;
+  text-align: left;
+}
+
+/*who we are*/
+/* .who-we-are {
+
+} */
+/*name and logo*/
+.name-and-logo h2 {
+  line-height: 1.25;
+}
+.name-and-logo h2 span {
+  margin-top: -0.25em;
+  display: block;
+}
+.name-and-logo p {
+  margin-block: 1em;
+}
+.name-and-logo img {
+  margin-bottom: 1em;
+}
+
+/*our-fabric*/
+.our-fabric {
+  position: relative;
+}
+.our-fabric h2,
+.our-fabric p {
+  margin-top: 1em;
+}
+.our-fabric p {
+  position: absolute;
+  top: 2.5em;
+  left: 0;
+}
+.our-fabric ul {
+  margin-top: 2em;
+  padding-left: 1em;
+  width: 30ch;
+  margin-bottom: 1em;
+}
+.our-fabric ul li {
+  line-height: 1.5;
+  list-style: disc;
+}
+
+/*packaging*/
+.packaging h2 {
+  margin-top: 2em;
+}
+.packaging p {
+  margin-top: 1em;
+}
+.packaging-imgs {
+  display: flex;
+  place-items: center;
+  margin-block: 1em 2em;
+  gap: 0.5em;
+}
+
+/*founder*/
+.founder-p {
+  margin-top: 1em;
+}
+.founder-p p + p {
+  margin-top: 0.25em;
+}
+.founder img {
+  margin-block: 1em 2em;
 }
 
 /*# sourceMappingURL=style.css.map */

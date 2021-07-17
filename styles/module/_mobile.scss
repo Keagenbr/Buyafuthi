@@ -42,6 +42,10 @@
   }
 }
 
+/*====
+HOME SECTION
+=====*/
+
 /*Products*/
 
 .products {
@@ -144,5 +148,110 @@
       text-align: center;
       max-width: 25ch;
     }
+  }
+}
+
+/*====
+ABOUT SECTION
+=====*/
+
+.who-we-are,
+.name-and-logo,
+.our-fabric,
+.packaging,
+.founder {
+  display: grid;
+  place-items: center;
+  h2 + img {
+    margin-block: 1em;
+  }
+  img + p {
+    margin-block: 1.5em;
+  }
+  p {
+    max-width: 32ch;
+    line-height: 1.25;
+    text-align: left;
+  }
+}
+/*who we are*/
+
+/* .who-we-are {
+ 
+} */
+
+/*name and logo*/
+
+.name-and-logo {
+  h2 {
+    line-height: 1.25;
+    span {
+      margin-top: -0.25em;
+      display: block;
+    }
+  }
+  p {
+    margin-block: 1em;
+  }
+  img {
+    margin-bottom: 1em;
+  }
+}
+
+/*our-fabric*/
+
+.our-fabric {
+  position: relative;
+  h2,
+  p {
+    margin-top: 1em;
+  }
+  p {
+    position: absolute;
+    top: 2.5em;
+    left: 0;
+    // transform: translate(10%, 2.5em);
+  }
+  ul {
+    margin-top: 2em;
+    padding-left: 1em;
+    width: 30ch;
+
+    li {
+      line-height: 1.5;
+      list-style: disc;
+    }
+    margin-bottom: 1em;
+  }
+}
+
+/*packaging*/
+.packaging {
+  h2 {
+    margin-top: 2em;
+  }
+  p {
+    margin-top: 1em;
+  }
+  &-imgs {
+    display: flex;
+    place-items: center;
+    margin-block: 1em 2em;
+    gap: 0.5em;
+  }
+}
+
+/*founder*/
+
+.founder {
+  &-p {
+    margin-top: 1em;
+
+    p + p {
+      margin-top: 0.25em;
+    }
+  }
+  img {
+    margin-block: 1em 2em;
   }
 }

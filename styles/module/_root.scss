@@ -23,6 +23,23 @@ body {
   font-family: var(--font);
   color: var(--txt-clr-neutral);
   //   overflow: scroll;
+  cursor: default;
+
+  ::selection {
+    background-color: var(--txt-clr-neutral);
+    color: var(--nav-bg);
+  }
+}
+
+.about {
+  background-color: hsl(175, 0%, 99%);
+  font-family: var(--font);
+  color: var(--txt-clr-contrast);
+  //   overflow: scroll;
+}
+.about ::selection {
+  background-color: var(--main-bg);
+  color: var(--txt-clr-neutral);
 }
 
 section {
@@ -31,7 +48,11 @@ section {
 
 .img {
   border-radius: 0.75em;
-  box-shadow: 0 0 2rem 0 var(--img-shadow);
+  box-shadow: 0 0 1rem 0 var(--img-shadow);
+}
+.logo-bg {
+  border-radius: 50%;
+  box-shadow: 0 0 1rem 0 var(--img-shadow);
 }
 
 h2 {

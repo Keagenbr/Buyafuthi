@@ -4,7 +4,7 @@
   margin-right: 0.25em;
 
   & + h4 {
-    font-size: 1.313rem;
+    font-size: 1.25rem;
     font-weight: 800;
     text-transform: uppercase;
   }
@@ -20,6 +20,7 @@ a {
   color: var(--txt-clr-neutral);
   font-size: 0.75rem;
   font-weight: 200;
+  cursor: pointer;
 }
 
 /* navigtion */
@@ -150,23 +151,25 @@ a {
   li {
     list-style-type: none;
     line-height: 1.5;
-    // padding-block: 0.05em;
+    // padkding-block: 0.05em;
     text-align: left;
 
     display: flex;
     justify-content: left;
     justify-items: left;
     position: relative;
+
+    a {
+      position: relative;
+      display: inline-block;
+      font-size: 0.75rem;
+      padding-left: 0.5rem;
+    }
   }
   .links,
   .contact {
     margin: 1em 10% 0 25%;
     max-width: 20ch;
-  }
-  a {
-    display: inline-block;
-    font-size: 0.9rem;
-    padding-left: 0.5rem;
   }
 
   svg {
