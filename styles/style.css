@@ -14,7 +14,13 @@
   --footer-bg: hsl(174, 50%, 50%);
   --img-shadow: hsl(174, 100%, 4%);
   --img-overlay: hsla(173, 100%, 8%, 65%);
-  --gradient: linear-gradient(85deg, hsl(174, 100%, 16%), hsl(174, 100%, 30%));
+  --gradient: linear-gradient(
+    90deg,
+    var(--nav-bg) 20%,
+    hsl(174, 100%, 30%) 50%,
+    var(--nav-bg)
+  );
+  --gradient-form: linear-gradient(45deg, var(--nav-bg), hsl(174, 100%, 30%));
   --font: Jost, serif;
 }
 
@@ -29,7 +35,8 @@ body ::selection {
   color: var(--nav-bg);
 }
 
-.about {
+.about,
+.contact-pg {
   background-color: #fcfcfc;
   font-family: var(--font);
   color: var(--txt-clr-contrast);
@@ -59,6 +66,16 @@ h2 {
   font-weight: 800;
 }
 
+.btn,
+.form-btn {
+  display: inline-block;
+  background-color: var(--txt-clr-neutral);
+  color: var(--img-shadow);
+  margin: 0.5em;
+  padding: 0.25em 1em;
+  border-radius: 1000rem;
+}
+
 .logo {
   width: 2rem;
   height: 2rem;
@@ -68,6 +85,7 @@ h2 {
   font-size: 1.25rem;
   font-weight: 800;
   text-transform: uppercase;
+  color: var(--txt-clr-neutral);
 }
 
 li::marker {
@@ -335,6 +353,10 @@ HOME SECTION
 /*====
 ABOUT SECTION
 =====*/
+.header {
+  background-image: url(../Source/Header-About.png);
+}
+
 .who-we-are,
 .name-and-logo,
 .our-fabric,
@@ -433,6 +455,85 @@ ABOUT SECTION
 }
 .founder img {
   margin-block: 1em 2em;
+}
+
+/*===
+Contact page
+===*/
+.header-contact {
+  background-color: #fcfcfc;
+  background-image: none;
+}
+.header-contact h1,
+.header-contact p {
+  color: var(--txt-clr-contrast);
+}
+.header-contact h1 {
+  position: relative;
+}
+.header-contact h1::after {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 0.1em;
+  width: 100%;
+  background: var(--gradient);
+}
+.header-contact p {
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+.form {
+  display: grid;
+  height: fit-content;
+  background-image: var(--gradient-form);
+  padding-block: 1em;
+  margin: 0 5% 2em;
+}
+.form label {
+  display: none;
+}
+
+.myForm {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+}
+.myForm h2 {
+  color: var(--txt-clr-neutral);
+}
+.myForm input {
+  background-color: var(--txt-clr-neutral);
+  margin-top: 1em;
+  border-radius: 1000rem;
+  padding: 0.5em 1em;
+}
+.myForm .form-btn {
+  color: var(--txt-clr-contrast);
+  font-weight: 600;
+}
+
+/*Available section*/
+.available {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+}
+.available h2 {
+  position: relative;
+}
+.available h2::after {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 0.1em;
+  width: 100%;
+  background: var(--gradient);
+}
+.available p {
+  line-height: 1.25;
+  margin: 1em 0;
 }
 
 /*# sourceMappingURL=style.css.map */

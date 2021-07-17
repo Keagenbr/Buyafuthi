@@ -154,6 +154,9 @@ HOME SECTION
 /*====
 ABOUT SECTION
 =====*/
+.header {
+  background-image: url(../Source/Header-About.png);
+}
 
 .who-we-are,
 .name-and-logo,
@@ -253,5 +256,92 @@ ABOUT SECTION
   }
   img {
     margin-block: 1em 2em;
+  }
+}
+
+/*===
+Contact page
+===*/
+
+.header-contact {
+  background-color: hsl(174, 0%, 99%);
+  background-image: none;
+
+  h1,
+  p {
+    color: var(--txt-clr-contrast);
+  }
+  h1 {
+    position: relative;
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      height: 0.1em;
+      width: 100%;
+      background: var(--gradient);
+    }
+  }
+  p {
+    font-weight: 400;
+    line-height: 1.25;
+  }
+}
+.form {
+  display: grid;
+  height: fit-content;
+  background-image: var(--gradient-form);
+  padding-block: 1em;
+  margin: 0 5% 2em;
+
+  label {
+    display: none;
+  }
+}
+.myForm {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+
+  h2 {
+    color: var(--txt-clr-neutral);
+  }
+
+  input {
+    background-color: var(--txt-clr-neutral);
+    margin-top: 1em;
+    border-radius: 1000rem;
+    padding: 0.5em 1em;
+  }
+
+  .form-btn {
+    color: var(--txt-clr-contrast);
+    font-weight: 600;
+  }
+}
+
+/*Available section*/
+.available {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+
+  h2 {
+    position: relative;
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      height: 0.1em;
+      width: 100%;
+      background: var(--gradient);
+    }
+  }
+
+  p {
+    line-height: 1.25;
+    margin: 1em 0;
   }
 }

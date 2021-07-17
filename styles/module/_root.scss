@@ -14,7 +14,13 @@
   --footer-bg: hsl(174, 50%, 50%);
   --img-shadow: hsl(174, 100%, 4%);
   --img-overlay: hsla(173, 100%, 8%, 65%);
-  --gradient: linear-gradient(85deg, hsl(174, 100%, 16%), hsl(174, 100%, 30%));
+  --gradient: linear-gradient(
+    90deg,
+    var(--nav-bg) 20%,
+    hsl(174, 100%, 30%) 50%,
+    var(--nav-bg)
+  );
+  --gradient-form: linear-gradient(45deg, var(--nav-bg), hsl(174, 100%, 30%));
   --font: Jost, serif;
 }
 
@@ -31,7 +37,8 @@ body {
   }
 }
 
-.about {
+.about,
+.contact-pg {
   background-color: hsl(175, 0%, 99%);
   font-family: var(--font);
   color: var(--txt-clr-contrast);
@@ -58,4 +65,14 @@ section {
 h2 {
   font-size: 1.25rem;
   font-weight: 800;
+}
+
+.btn,
+.form-btn {
+  display: inline-block;
+  background-color: var(--txt-clr-neutral);
+  color: var(--img-shadow);
+  margin: 0.5em;
+  padding: 0.25em 1em;
+  border-radius: 1000rem;
 }
