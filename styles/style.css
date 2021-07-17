@@ -412,17 +412,18 @@ ABOUT SECTION
 .our-fabric {
   position: relative;
 }
+.our-fabric h2 {
+  max-width: 15ch;
+}
 .our-fabric h2,
 .our-fabric p {
   margin-top: 1em;
 }
 .our-fabric p {
-  position: absolute;
-  top: 2.5em;
-  left: 0;
+  transform: translateX(-50%);
 }
 .our-fabric ul {
-  margin-top: 2em;
+  margin-top: 1em;
   padding-left: 1em;
   width: 30ch;
   margin-bottom: 1em;

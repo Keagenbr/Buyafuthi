@@ -205,18 +205,21 @@ ABOUT SECTION
 
 .our-fabric {
   position: relative;
+  h2 {
+    max-width: 15ch;
+  }
   h2,
   p {
     margin-top: 1em;
   }
   p {
-    position: absolute;
-    top: 2.5em;
-    left: 0;
-    // transform: translate(10%, 2.5em);
+    // position: absolute;
+    // top: 5%;
+    // left: 0;
+    transform: translateX(-50%);
   }
   ul {
-    margin-top: 2em;
+    margin-top: 1em;
     padding-left: 1em;
     width: 30ch;
 
