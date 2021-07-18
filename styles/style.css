@@ -536,5 +536,11 @@ Contact page
   line-height: 1.25;
   margin: 1em 0;
 }
+.available #map {
+  background-image: url(../Source/Google-Maps.png);
+  height: 200px;
+  width: 100%;
+  margin-bottom: 2em;
+}
 
 /*# sourceMappingURL=style.css.map */
