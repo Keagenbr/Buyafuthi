@@ -1,0 +1,24 @@
+{
+  "name": "Buyafuthi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Keagenbr/Buyafuthi-dev.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Keagenbr/Buyafuthi-dev/issues"
+  },
+  "homepage": "https://github.com/Keagenbr/Buyafuthi-dev#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.12.1"
+  }
+}

@@ -18,7 +18,7 @@
   h1 {
     color: var(--txt-clr-neutral);
     font-family: var(--font);
-    font-size: 3rem;
+    font-size: clamp(2rem, 6vw, 4rem);
     font-weight: 800;
     text-transform: uppercase;
     text-align: center;
@@ -28,7 +28,7 @@
   }
 
   p {
-    font-size: 0.938rem;
+    font-size: clamp(0.938rem, 3vw, calc(0.938rem * 1.5));
     font-weight: 200;
     text-align: center;
     max-width: 34ch;
@@ -156,6 +156,7 @@ ABOUT SECTION
 =====*/
 .header-about {
   background-image: url(../Source/Header-About.png);
+  margin-top: 5.25em;
 }
 
 .who-we-are,
@@ -165,6 +166,7 @@ ABOUT SECTION
 .founder {
   display: grid;
   place-items: center;
+  margin: 0.5em 0;
   h2 + img {
     margin-block: 1em;
   }
