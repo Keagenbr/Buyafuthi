@@ -97,6 +97,7 @@ Go to Top
   cursor: pointer;
   height: 3.2rem;
   width: 3.2rem;
+  border: 0;
   border-radius: 50%;
   margin: 0;
   padding: 0;
@@ -363,7 +364,7 @@ Desktop styles
     padding: 1em;
   }
   .footer .social .facebook,
-.footer .social .instagram {
+  .footer .social .instagram {
     display: inline-flex;
     align-items: center;
     justify-content: left;
@@ -374,7 +375,7 @@ Desktop styles
     border-radius: 10000rem;
   }
   .footer .social .facebook a,
-.footer .social .instagram a {
+  .footer .social .instagram a {
     padding-right: 0.75em;
     text-transform: uppercase;
     font-weight: 600;
@@ -396,7 +397,7 @@ Desktop styles
     padding-left: 0.5rem;
   }
   .footer .links,
-.footer .contact {
+  .footer .contact {
     margin: 1em 10% 0 25%;
     max-width: 20ch;
   }
@@ -743,7 +744,7 @@ Contact page
     background-blend-mode: darken;
   }
   .header h1,
-.header p {
+  .header p {
     grid-column: 1/3;
     z-index: 1;
     position: relative;
@@ -878,32 +879,32 @@ Contact page
   }
 
   .who-we-are,
-.name-and-logo,
-.our-fabric,
-.packaging,
-.founder {
+  .name-and-logo,
+  .our-fabric,
+  .packaging,
+  .founder {
     display: grid;
     place-items: center;
   }
   .who-we-are h2 + img,
-.name-and-logo h2 + img,
-.our-fabric h2 + img,
-.packaging h2 + img,
-.founder h2 + img {
+  .name-and-logo h2 + img,
+  .our-fabric h2 + img,
+  .packaging h2 + img,
+  .founder h2 + img {
     margin-block: 1em;
   }
   .who-we-are img + p,
-.name-and-logo img + p,
-.our-fabric img + p,
-.packaging img + p,
-.founder img + p {
+  .name-and-logo img + p,
+  .our-fabric img + p,
+  .packaging img + p,
+  .founder img + p {
     margin-block: 1.5em;
   }
   .who-we-are p,
-.name-and-logo p,
-.our-fabric p,
-.packaging p,
-.founder p {
+  .name-and-logo p,
+  .our-fabric p,
+  .packaging p,
+  .founder p {
     max-width: 32ch;
     line-height: 1.25;
     text-align: left;
@@ -936,7 +937,7 @@ Contact page
     max-width: 15ch;
   }
   .our-fabric h2,
-.our-fabric p {
+  .our-fabric p {
     margin-top: 1em;
   }
   .our-fabric p {
@@ -986,7 +987,7 @@ Contact page
     background-image: none;
   }
   .header-contact h1,
-.header-contact p {
+  .header-contact p {
     color: var(--txt-clr-contrast);
   }
   .header-contact h1 {

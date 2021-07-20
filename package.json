@@ -1,7 +1,6 @@
 {
-  "name": "Buyafuthi",
+  "name": "buyafuthi",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "start": "eleventy --serve",
@@ -20,5 +19,7 @@
   "homepage": "https://github.com/Keagenbr/Buyafuthi-dev#readme",
   "devDependencies": {
     "@11ty/eleventy": "^0.12.1"
-  }
+  },
+  "dependencies": {},
+  "description": ""
 }
