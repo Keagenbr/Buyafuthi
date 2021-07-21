@@ -1,17 +1,32 @@
+/*==========================
+      Desktop styles
+==========================*/
+
 @media (min-width: 34.375rem) {
+  h2 {
+    font-size: 2.5rem;
+  }
+
   /* header */
   .header {
     display: grid;
     grid-template-columns: 2fr 1fr 2fr;
 
-    margin: 3em 0 2rem;
+    margin: 3em clamp(5%, 8%, 15%) 2rem;
     padding: 4rem 10%;
 
-    //   outline: solid red 1px;
     background-image: var(--main-bg);
     background-color: hsla(0, 0%, 0%, 0%);
     background-blend-mode: darken;
-    //   width: 100%;
+
+    h1 {
+      font-size: 2.75rem;
+    }
+    @media (min-width: 40rem) {
+      h1 {
+        font-size: 4rem;
+      }
+    }
 
     h1,
     p {
@@ -19,12 +34,9 @@
       z-index: 1;
       position: relative;
     }
-    // h1 {
-    //   font-size: 6rem;
-    // }
 
     &-img {
-      width: 375px;
+      width: max-content;
       height: 80%;
       position: absolute;
       top: 20%;
@@ -41,26 +53,23 @@
         border-radius: var(--radius);
         box-shadow: -1rem 0 0.5rem 0 var(--main-bg);
         grid-column: 3 / 4;
-
-        &::before {
-          display: block;
-          position: absolute;
-          content: "";
-          top: 0;
-          right: 0;
-          width: 100%;
-          height: 100%;
-          z-index: 1;
-          background-image: linear-gradient(
-            90deg,
-            hsl(174, 100%, 20%) 25%,
-            hsla(174, 100%, 16%, 0.5)
-          );
-          // opacity: 0.95;
-          // filter: blur(1rem);
-          // mix-blend-mode: multiply;
-          border-radius: 0 4rem 4rem 0;
-        }
+      }
+      &::before {
+        display: block;
+        position: absolute;
+        content: "";
+        right: 0;
+        right: 0;
+        width: 100%;
+        height: 80%;
+        z-index: 1;
+        background-image: linear-gradient(
+          90deg,
+          hsl(174, 100%, 20%) 25%,
+          hsla(174, 100%, 16%, 0.5)
+        );
+        border-radius: 0 4rem 4rem 0;
+        grid-column: 3 / 4;
       }
     }
   }
@@ -72,43 +81,34 @@ HOME SECTION
   /*Products*/
 
   .products {
-    display: flex;
-    flex-direction: column;
-    place-items: center;
-
-    // h2 {
-
-    //   // text-align: center;
-    // }
-
     &-gallary {
       display: grid;
-      width: 100%;
       margin-top: 1rem;
-      grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-      gap: 0.5em;
-      place-content: center;
-      place-items: center;
-    }
-
-    .product {
-      width: max-content;
-      img + img {
-        margin-left: 0.5em;
+      grid-template-columns: repeat(auto-fit, 20rem);
+      // @media (min-width: 40rem) {
+      // grid-template-columns: repeat(3, 14rem);
+      // }
+      .product {
+        img:first-child:not(.g4-img) {
+          width: 6rem;
+          height: 8rem;
+        }
+        img:last-child:not(.g4-img) {
+          width: 9rem;
+          height: 7.5rem;
+        }
       }
     }
     .g4 {
       display: grid;
       grid-template-columns: repeat(2, 5rem);
       place-content: center;
+      gap: 0.5em;
 
       img {
         width: 4rem;
-        margin: 0.5em;
+        // margin: 0.5em;
       }
-    }
-    .product + .product {
-      margin: 1rem 2rem;
     }
   }
 
@@ -133,7 +133,7 @@ HOME SECTION
       width: 100%;
       margin: 1em 0;
       place-content: center;
-      grid-template-columns: repeat(auto-fit, minmax(15rem, 20rem));
+      grid-template-columns: repeat(3, 10rem);
       gap: 1em;
       place-items: center;
       figure {
@@ -160,7 +160,7 @@ HOME SECTION
       width: 90%;
       margin: 1em auto;
       place-content: center;
-      grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+      grid-template-columns: repeat(3, 13rem);
       gap: 1.5em;
       figure {
         display: flex;

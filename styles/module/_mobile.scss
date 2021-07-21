@@ -1,3 +1,12 @@
+h2 {
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+p {
+  font-weight: 200;
+}
+
 /* header */
 .header {
   display: grid;
@@ -9,7 +18,7 @@
 
   //   outline: solid red 1px;
   background-color: var(--img-overlay);
-  background-image: url(../Source/Header-Home.png);
+  background-image: url(/assets/Header-Home.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-blend-mode: multiply;
@@ -18,18 +27,17 @@
   h1 {
     color: var(--txt-clr-neutral);
     font-family: var(--font);
-    font-size: clamp(2rem, 6vw, 4rem);
+    font-size: 2rem;
     font-weight: 800;
     text-transform: uppercase;
     text-align: center;
-    max-width: 15ch;
+    max-width: 16ch;
     line-height: 0.85;
     padding-bottom: 0.5em;
   }
 
   p {
     font-size: clamp(0.938rem, 3vw, calc(0.938rem * 1.5));
-    font-weight: 200;
     text-align: center;
     max-width: 34ch;
     line-height: 1.15;
@@ -53,40 +61,40 @@ HOME SECTION
   flex-direction: column;
   place-items: center;
 
-  // h2 {
-
-  //   // text-align: center;
-  // }
-
   &-gallary {
     display: grid;
     width: 100%;
     margin-top: 1rem;
-    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-    gap: 0.5em;
+    grid-template-columns: repeat(auto-fit, 14.5rem);
+    gap: 1rem;
     place-content: center;
     place-items: center;
   }
 
   .product {
-    width: max-content;
-    img + img {
-      margin-left: 0.5em;
+    img:first-child:not(.g4-img) {
+      width: 4rem;
+      height: 6.65rem;
+    }
+    img:last-child:not(.g4-img) {
+      width: 6rem;
+      height: 5.75rem;
     }
   }
   .g4 {
     display: grid;
     grid-template-columns: repeat(2, 5rem);
     place-content: center;
+    gap: 0.5em;
 
     img {
       width: 4rem;
-      margin: 0.5em;
+      // margin: 0.5em;
     }
   }
-  .product + .product {
-    margin: 1rem 2rem;
-  }
+  // .product + .product {
+  //   margin: 0 2rem;
+  // }
 }
 
 /*Collaborations*/
@@ -102,7 +110,7 @@ HOME SECTION
     text-align: center;
     padding: 0.5em 0;
     line-height: 1.25;
-    max-width: 50ch;
+    max-width: 40ch;
   }
 
   &-items {
@@ -110,7 +118,7 @@ HOME SECTION
     width: 100%;
     margin: 1em 0;
     place-content: center;
-    grid-template-columns: repeat(auto-fit, minmax(15rem, 20rem));
+    grid-template-columns: 10rem;
     gap: 1em;
     place-items: center;
     figure {
@@ -137,7 +145,7 @@ HOME SECTION
     width: 90%;
     margin: 1em auto;
     place-content: center;
-    grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+    grid-template-columns: 13rem;
     gap: 1.5em;
     figure {
       display: flex;
@@ -155,7 +163,7 @@ HOME SECTION
 ABOUT SECTION
 =====*/
 .header-about {
-  background-image: url(../Source/Header-About.png);
+  background-image: url(/assets/Header-About.png);
   margin-top: 5.25em;
 }
 
@@ -351,7 +359,7 @@ Contact page
   }
 
   #map {
-    background-image: url(../Source/Google-Maps.png);
+    background-image: url(/assets/Google-Maps.png);
     height: 200px;
     width: 100%;
     margin-bottom: 2em;
