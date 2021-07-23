@@ -178,7 +178,10 @@ HOME SECTION
 ABOUT SECTION
 =====*/
   .header-about {
-    background-image: url(../Source/Header-About.png);
+    background-image: linear-gradient(
+      hsl(0, 0%, 100%),
+      hsla(0, 0%, 100%, 0.75)
+    );
   }
 
   .who-we-are,

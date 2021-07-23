@@ -40,6 +40,17 @@ body ::selection {
   color: var(--nav-bg);
 }
 
+/*===
+Scroll Stuff
+===*/
+.scroll-down .nav {
+  transform: translate3d(0, -100%, 0);
+}
+
+.scroll-up .nav {
+  filter: drop-shadow(0 -1em 2em gray);
+}
+
 .about,
 .contact-pg {
   background-color: #fcfcfc;
@@ -629,10 +640,11 @@ ABOUT SECTION
   margin-top: 1em;
 }
 .packaging-imgs {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 20rem);
   place-items: center;
   margin-block: 1em 2em;
-  gap: 0.5em;
+  gap: 1em;
 }
 
 /*founder*/
@@ -874,7 +886,7 @@ Contact page
   ABOUT SECTION
   =====*/
   .header-about {
-    background-image: url(../Source/Header-About.png);
+    background-image: linear-gradient(white, rgba(255, 255, 255, 0.75));
   }
 
   .who-we-are,
@@ -1062,16 +1074,6 @@ Contact page
     width: 100%;
     margin-bottom: 2em;
   }
-}
-/*===
-Scroll Stuff
-===*/
-.scroll-down .nav {
-  transform: translate3d(0, -100%, 0);
-}
-
-.scroll-up .nav {
-  filter: drop-shadow(0 -1em 2em gray);
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,12 +1,1 @@
 @use 'module';
-
-/*===
-Scroll Stuff
-===*/
-.scroll-down .nav {
-  transform: translate3d(0, -100%, 0);
-}
-
-.scroll-up .nav {
-  filter: drop-shadow(0 -1em 2em hsl(0 0% 50%));
-}
