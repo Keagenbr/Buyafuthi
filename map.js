@@ -11,7 +11,7 @@ function initMap() {
   let marker = new google.maps.Marker({
     position: pos,
     map: map,
-    icon: "assets/Buyafuti-map.svg",
+    icon: "/assets/Buyafuti-map.svg",
   });
 
   let infoWindow = new google.maps.InfoWindow({
