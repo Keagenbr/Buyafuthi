@@ -24,33 +24,23 @@
   --gradient-form: linear-gradient(45deg, var(--nav-bg), hsl(174, 100%, 30%));
   --font: Jost, serif;
 }
-<<<<<<< HEAD
 
 html {
   scroll-behavior: smooth;
 }
 
-=======
-html {
-  scroll-behavior: smooth;
-}
->>>>>>> DEV-v2
 body {
   background-color: var(--main-bg);
   font-family: var(--font);
   color: var(--txt-clr-neutral);
   cursor: default;
-<<<<<<< HEAD
   overflow: hidden scroll;
-=======
->>>>>>> DEV-v2
 }
 body ::selection {
   background-color: var(--txt-clr-neutral);
   color: var(--nav-bg);
 }
 
-<<<<<<< HEAD
 /*===
 Scroll Stuff
 ===*/
@@ -62,8 +52,6 @@ Scroll Stuff
   filter: drop-shadow(0 -1em 2em gray);
 }
 
-=======
->>>>>>> DEV-v2
 .about,
 .contact-pg {
   background-color: #fcfcfc;
@@ -80,7 +68,6 @@ section {
   margin: 0 5%;
 }
 
-<<<<<<< HEAD
 .img {
   border-radius: 0.75em;
   box-shadow: 0 0 1rem 0 var(--img-shadow);
@@ -89,11 +76,6 @@ section {
 .logo-bg {
   border-radius: 50%;
   box-shadow: 0 0 1rem 0 var(--img-shadow);
-=======
-h2 {
-  font-size: 1.25rem;
-  font-weight: 800;
->>>>>>> DEV-v2
 }
 
 .btn,
@@ -107,7 +89,6 @@ h2 {
 }
 
 /*===
-<<<<<<< HEAD
 Go to Top
 ===*/
 .topBtn {
@@ -116,50 +97,11 @@ Go to Top
   position: fixed;
   display: grid;
   place-content: center;
-=======
-Scroll Stuff
-===*/
-.scroll-down .nav {
-  opacity: 0;
-  transition: opacity 0.25s ease-in-out;
-  -webkit-transition: opacity 0.25s ease-in-out;
-  -moz-transition: opacity 0.25s ease-in-out;
-  -ms-transition: opacity 0.25s ease-in-out;
-  -o-transition: opacity 0.25s ease-in-out;
-}
-
-.scroll-up .nav {
-  filter: drop-shadow(0 -1em 2em gray);
-}
-
-/*===
-Image shadows / corners
-===*/
-.img {
-  border-radius: 0.75em;
-  box-shadow: 0 0 1rem 0 var(--img-shadow);
-}
-.logo-bg {
-  border-radius: 50%;
-  box-shadow: 0 0 1rem 0 var(--img-shadow);
-}
-
-/* ====
-Go Top Button
-====*/
-.topBtn {
-  display: grid;
-  place-content: center;
-  opacity: 0;
-  pointer-events: none;
-  position: fixed;
->>>>>>> DEV-v2
   bottom: 1rem;
   right: 1rem;
   z-index: 99999;
   background-color: var(--nav-bg);
   cursor: pointer;
-<<<<<<< HEAD
   height: 3.2rem;
   width: 3.2rem;
   border-radius: 50%;
@@ -176,42 +118,12 @@ Go Top Button
 
 .topBtn-add {
   opacity: 1;
-=======
-  width: 3.5rem;
-  height: 3.5rem;
-  border-radius: 50%;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
-  transition: opacity 0.15s ease-in;
-  -webkit-transition: opacity 0.15s ease-in;
-  -moz-transition: opacity 0.15s ease-in;
-  -ms-transition: opacity 0.15s ease-in;
-  -o-transition: opacity 0.15s ease-in;
-}
-.topBtn img {
-  width: 3rem;
-  pointer-events: none;
-}
-.topBtn-add {
-  opacity: 0.75;
->>>>>>> DEV-v2
   pointer-events: all;
 }
 
 /*===
 Logo
 ===*/
-<<<<<<< HEAD
-=======
-.logo-main {
-  display: flex;
-  place-items: center;
-  min-height: 3rem;
-}
-
->>>>>>> DEV-v2
 .logo {
   width: 2rem;
   height: 2rem;
@@ -222,17 +134,12 @@ Logo
   font-weight: 800;
   text-transform: uppercase;
   color: var(--txt-clr-neutral);
-<<<<<<< HEAD
 }
 
 li::marker {
   display: none;
 }
 
-=======
-  /* margin-left: 0.5em; */
-}
->>>>>>> DEV-v2
 a {
   text-decoration: none;
   text-transform: uppercase;
@@ -253,7 +160,6 @@ navigtion
   position: fixed;
   inset: 0;
   height: max-content;
-<<<<<<< HEAD
   z-index: 9999;
   transition: all 300ms ease-in-out;
 }
@@ -274,24 +180,6 @@ navigtion
 }
 .nav-items li + li {
   margin-left: 1em;
-=======
-  width: 100%;
-  z-index: 9999;
-  transition: all 300ms ease-in-out;
-}
-.nav-items {
-  display: flex;
-  align-items: center;
-}
-.nav-items {
-  display: flex;
-  align-items: center;
-  padding-bottom: 0.5em;
-}
-.nav-items li + li {
-  margin-left: 1em;
-  position: relative;
->>>>>>> DEV-v2
 }
 .nav-items li + li::before {
   display: block;
@@ -301,7 +189,6 @@ navigtion
   pointer-events: none;
   color: var(--txt-clr-contrast);
 }
-<<<<<<< HEAD
 .nav-items li::marker {
   display: none;
 }
@@ -309,12 +196,6 @@ navigtion
   display: block;
   position: relative;
   font-weight: 300;
-=======
-.nav-items li .active {
-  display: block;
-  position: relative;
-  font-weight: 400;
->>>>>>> DEV-v2
 }
 .nav-items li .active::after {
   display: block;
@@ -326,7 +207,6 @@ navigtion
   background-color: var(--img-shadow);
 }
 
-<<<<<<< HEAD
 /*Footer*/
 .footer {
   background-color: var(--footer-bg);
@@ -547,8 +427,6 @@ p {
   font-weight: 200;
 }
 
-=======
->>>>>>> DEV-v2
 /* header */
 .header {
   display: grid;
@@ -557,11 +435,7 @@ p {
   margin: 3em 0 2rem;
   padding: 4rem 2%;
   background-color: var(--img-overlay);
-<<<<<<< HEAD
   background-image: url(/assets/Header-Home.png);
-=======
-  background-image: url(assets/Header-Home.png);
->>>>>>> DEV-v2
   background-size: cover;
   background-repeat: no-repeat;
   background-blend-mode: multiply;
@@ -569,28 +443,16 @@ p {
 .header h1 {
   color: var(--txt-clr-neutral);
   font-family: var(--font);
-<<<<<<< HEAD
   font-size: 2rem;
   font-weight: 800;
   text-transform: uppercase;
   text-align: center;
   max-width: 16ch;
-=======
-  font-size: clamp(2rem, 6vw, 4rem);
-  font-weight: 800;
-  text-transform: uppercase;
-  text-align: center;
-  max-width: 15ch;
->>>>>>> DEV-v2
   line-height: 0.85;
   padding-bottom: 0.5em;
 }
 .header p {
   font-size: clamp(0.938rem, 3vw, calc(0.938rem * 1.5));
-<<<<<<< HEAD
-=======
-  font-weight: 200;
->>>>>>> DEV-v2
   text-align: center;
   max-width: 34ch;
   line-height: 1.15;
@@ -598,10 +460,6 @@ p {
 .header img {
   opacity: 0;
   position: absolute;
-<<<<<<< HEAD
-=======
-  inset: 0;
->>>>>>> DEV-v2
   pointer-events: none;
 }
 
@@ -618,7 +476,6 @@ HOME SECTION
   display: grid;
   width: 100%;
   margin-top: 1rem;
-<<<<<<< HEAD
   grid-template-columns: repeat(auto-fit, 14.5rem);
   gap: 1rem;
   place-content: center;
@@ -631,37 +488,15 @@ HOME SECTION
 .products .product img:last-child:not(.g4-img) {
   width: 6rem;
   height: 5.75rem;
-=======
-  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-  gap: 0.5em;
-  place-content: center;
-  place-items: center;
-}
-.products .product {
-  width: max-content;
-}
-.products .product img + img {
-  margin-left: 0.5em;
->>>>>>> DEV-v2
 }
 .products .g4 {
   display: grid;
   grid-template-columns: repeat(2, 5rem);
   place-content: center;
-<<<<<<< HEAD
   gap: 0.5em;
 }
 .products .g4 img {
   width: 4rem;
-=======
-}
-.products .g4 img {
-  width: 4rem;
-  margin: 0.5em;
-}
-.products .product + .product {
-  margin: 1rem 2rem;
->>>>>>> DEV-v2
 }
 
 /*Collaborations*/
@@ -675,22 +510,14 @@ HOME SECTION
   text-align: center;
   padding: 0.5em 0;
   line-height: 1.25;
-<<<<<<< HEAD
   max-width: 40ch;
-=======
-  max-width: 25ch;
->>>>>>> DEV-v2
 }
 .collaborations-items {
   display: grid;
   width: 100%;
   margin: 1em 0;
   place-content: center;
-<<<<<<< HEAD
   grid-template-columns: 10rem;
-=======
-  grid-template-columns: repeat(auto-fit, minmax(15rem, 20rem));
->>>>>>> DEV-v2
   gap: 1em;
   place-items: center;
 }
@@ -700,10 +527,7 @@ HOME SECTION
 .collaborations-items figcaption {
   text-align: center;
 }
-<<<<<<< HEAD
 
-=======
->>>>>>> DEV-v2
 /*Plastic to Fabric*/
 .PTF {
   display: flex;
@@ -716,11 +540,7 @@ HOME SECTION
   width: 90%;
   margin: 1em auto;
   place-content: center;
-<<<<<<< HEAD
   grid-template-columns: 13rem;
-=======
-  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
->>>>>>> DEV-v2
   gap: 1.5em;
 }
 .PTF-items figure {
@@ -732,30 +552,15 @@ HOME SECTION
   text-align: center;
   max-width: 25ch;
 }
-<<<<<<< HEAD
-=======
-.PTF-items figcaption h3 {
-  text-transform: capitalize;
-  padding-top: 0.5em;
-  font-size: 1.15rem;
-  font-weight: 600;
-}
->>>>>>> DEV-v2
 
 /*====
 ABOUT SECTION
 =====*/
 .header-about {
-<<<<<<< HEAD
   background-image: url(/assets/Header-About.png);
   margin-top: 5.25em;
 }
 
-=======
-  background-image: url(assets/Header-About.png);
-  margin-top: 4em;
-}
->>>>>>> DEV-v2
 .who-we-are,
 .name-and-logo,
 .our-fabric,
@@ -784,7 +589,6 @@ ABOUT SECTION
 .our-fabric p,
 .packaging p,
 .founder p {
-<<<<<<< HEAD
   max-width: 32ch;
   line-height: 1.25;
   text-align: left;
@@ -794,12 +598,6 @@ ABOUT SECTION
 /* .who-we-are {
 
 } */
-=======
-  max-width: 25ch;
-  line-height: 1.15;
-  text-align: left;
-}
->>>>>>> DEV-v2
 /*name and logo*/
 .name-and-logo h2 {
   line-height: 1.25;
@@ -849,16 +647,9 @@ ABOUT SECTION
 }
 .packaging-imgs {
   display: grid;
-<<<<<<< HEAD
   grid-template-columns: repeat(auto-fit, 20rem);
   place-items: center;
   margin-block: 1em 2em;
-=======
-  width: 100%;
-  grid-template-columns: repeat(auto-fit, 10rem);
-  place-content: center;
-  margin: 1em 0 2em;
->>>>>>> DEV-v2
   gap: 1em;
 }
 
@@ -904,19 +695,8 @@ Contact page
   display: grid;
   height: fit-content;
   background-image: var(--gradient-form);
-<<<<<<< HEAD
   padding-block: 1em;
   margin: 0 5% 2em;
-=======
-  border-radius: 0.25em;
-  box-shadow: var(--img-shadow);
-  padding-block: 1em;
-  margin: 0 5% 2em;
-  -webkit-border-radius: 0.25em;
-  -moz-border-radius: 0.25em;
-  -ms-border-radius: 0.25em;
-  -o-border-radius: 0.25em;
->>>>>>> DEV-v2
 }
 .form label {
   display: none;
@@ -941,13 +721,7 @@ Contact page
   font-weight: 600;
 }
 
-<<<<<<< HEAD
 /*Available section*/
-=======
-/*
-Available section
-*/
->>>>>>> DEV-v2
 .available {
   display: flex;
   flex-direction: column;
@@ -969,19 +743,12 @@ Available section
   margin: 1em 0;
 }
 .available #map {
-<<<<<<< HEAD
   background-image: url(/assets/Google-Maps.png);
-=======
-  background-image: url(assets/Google-Maps.png);
-  background-repeat: no-repeat;
-  background-size: contain;
->>>>>>> DEV-v2
   height: 200px;
   width: 100%;
   margin-bottom: 2em;
 }
 
-<<<<<<< HEAD
 /*==========================
       Desktop styles
 ==========================*/
@@ -1349,75 +1116,3 @@ Available section
 }
 
 /*# sourceMappingURL=style.css.map */
-=======
-/*===
-Footer
-===*/
-.footer {
-  background-color: var(--footer-bg);
-  display: grid;
-  width: 100%;
-  padding: 0.75em 0;
-}
-.footer-logo {
-  display: flex;
-  align-items: center;
-  justify-self: center;
-}
-.footer-logo h4 {
-  color: #ccfffb;
-}
-.footer .social {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  padding: 1em;
-}
-.footer .social .facebook,
-.footer .social .instagram {
-  display: inline-flex;
-  align-items: center;
-  justify-content: left;
-  min-width: 7.75rem;
-  background-color: var(--img-overlay);
-  padding: 0.15em 0.5em;
-  margin: 0.25em auto;
-  border-radius: 10000rem;
-}
-.footer .social .facebook a,
-.footer .social .instagram a {
-  padding-right: 0.75em;
-  text-transform: uppercase;
-  font-weight: 600;
-  font-size: 0.75rem;
-}
-.footer li {
-  list-style-type: none;
-  line-height: 1.5;
-  text-align: left;
-  display: flex;
-  justify-content: left;
-  justify-items: left;
-  position: relative;
-}
-.footer li a {
-  position: relative;
-  display: inline-block;
-  font-size: 0.75rem;
-  padding-left: 0.5rem;
-}
-.footer .links,
-.footer .contact {
-  margin: 1em 10% 0 25%;
-  max-width: 20ch;
-}
-.footer svg {
-  width: 1rem;
-  height: 1rem;
-  display: inline-block;
-  position: relative;
-  align-self: center;
-}
->>>>>>> DEV-v2
