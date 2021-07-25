@@ -1,0 +1,95 @@
+/*====
+HOME SECTION
+=====*/
+/*Products*/
+.products {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+}
+.products-gallary {
+  display: grid;
+  width: 100%;
+  margin-top: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  gap: 0.5em;
+  place-content: center;
+  place-items: center;
+}
+.products .product {
+  width: max-content;
+}
+.products .product img + img {
+  margin-left: 0.5em;
+}
+.products .g4 {
+  display: grid;
+  grid-template-columns: repeat(2, 5rem);
+  place-content: center;
+}
+.products .g4 img {
+  width: 4rem;
+  margin: 0.5em;
+}
+.products .product + .product {
+  margin: 1rem 2rem;
+}
+
+/*Collaborations*/
+.collaborations {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-block: 2em;
+}
+.collaborations p {
+  text-align: center;
+  padding: 0.5em 0;
+  line-height: 1.25;
+  max-width: 25ch;
+}
+.collaborations-items {
+  display: grid;
+  width: 100%;
+  margin: 1em 0;
+  place-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 20rem));
+  gap: 1em;
+  place-items: center;
+}
+.collaborations-items figure {
+  margin: 0.5em;
+}
+.collaborations-items figcaption {
+  text-align: center;
+}
+/*Plastic to Fabric*/
+.PTF {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  margin-block: 2em;
+}
+.PTF-items {
+  display: grid;
+  width: 90%;
+  margin: 1em auto;
+  place-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  gap: 1.5em;
+}
+.PTF-items figure {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+}
+.PTF-items figcaption {
+  text-align: center;
+  max-width: 25ch;
+}
+.PTF-items figcaption h3 {
+  text-transform: capitalize;
+  padding-top: 0.5em;
+  font-size: 1.15rem;
+  font-weight: 600;
+}
