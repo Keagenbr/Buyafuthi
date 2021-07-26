@@ -8,7 +8,7 @@
     "critical": "^4.0.1"
   },
   "scripts": {
-    "start": "node server.js",
+    "sass": "sass --style=compressed --no-source-map styles/*.scss:./ -w",
     "critical": "node critical.js"
   },
   "repository": {

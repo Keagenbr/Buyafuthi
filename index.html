@@ -3,12 +3,28 @@
 
 <head>
     <style>
+        *:where(:not(iframe, anvas, img, svg, video):not(svg *)) {
+            all: unset;
+            display: revert
+        }
+
         *,
-        ::before,
-        ::after {
-            margin: 0;
-            padding: 0;
+        *::before,
+        *::after {
             box-sizing: border-box
+        }
+
+        ol,
+        ul {
+            list-style: none
+        }
+
+        img {
+            max-width: 100%
+        }
+
+        svg {
+            max-width: 100px
         }
 
         :root {
@@ -19,47 +35,50 @@
             --footer-bg: hsl(174, 50%, 50%);
             --img-shadow: hsl(174, 100%, 4%);
             --img-overlay: hsla(173, 100%, 8%, 65%);
-            --gradient: linear-gradient(90deg, var(--nav-bg) 20%, hsl(174, 100%, 30%) 50%, var(--nav-bg));
+            --gradient: linear-gradient(90deg,
+                    var(--nav-bg) 20%,
+                    hsl(174, 100%, 30%) 50%,
+                    var(--nav-bg));
             --gradient-header: linear-gradient(90deg, var(--main-bg), var(--nav-bg) 40%);
             --gradient-form: linear-gradient(45deg, var(--nav-bg), hsl(174, 100%, 30%));
-            --font: Jost, serif
+            --font: Jost, serif;
         }
 
         html {
-            scroll-behavior: smooth
+            scroll-behavior: smooth;
         }
 
         body {
             background-color: var(--main-bg);
             font-family: var(--font);
             color: var(--txt-clr-neutral);
-            cursor: default
+            cursor: default;
         }
 
         body ::selection {
             background-color: var(--txt-clr-neutral);
-            color: var(--nav-bg)
+            color: var(--nav-bg);
         }
 
         .about,
         .contact-pg {
             background-color: #fcfcfc;
             font-family: var(--font);
-            color: var(--txt-clr-contrast)
+            color: var(--txt-clr-contrast);
         }
 
         .about ::selection {
             background-color: var(--main-bg);
-            color: var(--txt-clr-neutral)
+            color: var(--txt-clr-neutral);
         }
 
         section {
-            margin: 0 5%
+            margin: 0 5%;
         }
 
         h2 {
             font-size: 1.25rem;
-            font-weight: 800
+            font-weight: 800;
         }
 
         .btn,
@@ -67,29 +86,43 @@
             display: inline-block;
             background-color: var(--txt-clr-neutral);
             color: var(--img-shadow);
-            margin: .5em;
-            padding: .25em 1em;
-            border-radius: 1000rem
+            margin: 0.5em;
+            padding: 0.25em 1em;
+            border-radius: 1000rem;
         }
 
+        /*===
+        Scroll Stuff
+        ===*/
         .scroll-down .nav {
             opacity: 0;
-            transition: opacity .25s ease-in-out;
-            -webkit-transition: opacity .25s ease-in-out;
-            -moz-transition: opacity .25s ease-in-out;
-            -ms-transition: opacity .25s ease-in-out;
-            -o-transition: opacity .25s ease-in-out
+            transition: opacity 0.25s ease-in-out;
+            -webkit-transition: opacity 0.25s ease-in-out;
+            -moz-transition: opacity 0.25s ease-in-out;
+            -ms-transition: opacity 0.25s ease-in-out;
+            -o-transition: opacity 0.25s ease-in-out;
         }
 
         .scroll-up .nav {
-            filter: drop-shadow(0 -1em 2em gray)
+            filter: drop-shadow(0 -1em 2em gray);
         }
 
+        /*===
+        Image shadows / corners
+        ===*/
         .img {
-            border-radius: .75em;
-            box-shadow: 0 0 1rem 0 var(--img-shadow)
+            border-radius: 0.75em;
+            box-shadow: 0 0 1rem 0 var(--img-shadow);
         }
 
+        .logo-bg {
+            border-radius: 50%;
+            box-shadow: 0 0 1rem 0 var(--img-shadow);
+        }
+
+        /* ====
+        Go Top Button
+        ====*/
         .topBtn {
             display: grid;
             place-content: center;
@@ -108,243 +141,23 @@
             -moz-border-radius: 50%;
             -ms-border-radius: 50%;
             -o-border-radius: 50%;
-            transition: opacity .15s ease-in;
-            -webkit-transition: opacity .15s ease-in;
-            -moz-transition: opacity .15s ease-in;
-            -ms-transition: opacity .15s ease-in;
-            -o-transition: opacity .15s ease-in
+            transition: opacity 0.15s ease-in;
+            -webkit-transition: opacity 0.15s ease-in;
+            -moz-transition: opacity 0.15s ease-in;
+            -ms-transition: opacity 0.15s ease-in;
+            -o-transition: opacity 0.15s ease-in;
         }
 
         .topBtn img {
             width: 3rem;
-            pointer-events: none
+            pointer-events: none;
         }
 
         .topBtn-add {
-            opacity: .75;
-            pointer-events: all
-        }
-
-        .logo-main {
-            display: flex;
-            place-items: center;
-            min-height: 3rem
-        }
-
-        .logo {
-            width: 2rem;
-            height: 2rem;
-            margin-right: .25em
-        }
-
-        .logo+h4 {
-            font-size: 1.25rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            color: var(--txt-clr-neutral)
-        }
-
-        a {
-            text-decoration: none;
-            text-transform: uppercase;
-            color: var(--txt-clr-neutral);
-            font-size: .75rem;
-            font-weight: 200;
-            cursor: pointer
-        }
-
-        .nav {
-            background-color: var(--nav-bg);
-            display: flex;
-            flex-direction: column;
-            place-items: center;
-            position: fixed;
-            inset: 0;
-            height: max-content;
-            width: 100%;
-            z-index: 9999;
-            transition: all 300ms ease-in-out
-        }
-
-        .nav-items {
-            display: flex;
-            align-items: center
-        }
-
-        .nav-items {
-            display: flex;
-            align-items: center;
-            padding-bottom: .5em
-        }
-
-        .nav-items li+li {
-            margin-left: 1em;
-            position: relative
-        }
-
-        .nav-items li+li::before {
-            display: block;
-            position: absolute;
-            content: "|";
-            inset-inline: -0.65em 0;
-            pointer-events: none;
-            color: var(--txt-clr-contrast)
-        }
-
-        .nav-items li .active {
-            display: block;
-            position: relative;
-            font-weight: 400
-        }
-
-        .nav-items li .active::after {
-            display: block;
-            position: absolute;
-            content: "";
-            bottom: 0;
-            height: .1rem;
-            width: 100%;
-            background-color: var(--img-shadow)
-        }
-
-        .header {
-            display: grid;
-            place-items: center;
-            position: relative;
-            margin: 3em 0 2rem;
-            padding: 4rem 2%;
-            background-color: var(--img-overlay);
-            background-image: url(assets/Header-Home.png);
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-blend-mode: multiply;
-        }
-
-        .header h1 {
-            color: var(--txt-clr-neutral);
-            font-family: var(--font);
-            font-size: clamp(2rem, 6vw, 4rem);
-            font-weight: 800;
-            text-transform: uppercase;
-            text-align: center;
-            max-width: 15ch;
-            line-height: 0.85;
-            padding-bottom: 0.5em;
-        }
-
-        .header p {
-            font-size: clamp(0.938rem, 3vw, calc(0.938rem * 1.5));
-            font-weight: 200;
-            text-align: center;
-            max-width: 34ch;
-            line-height: 1.15;
-        }
-
-        .header img {
-            opacity: 0;
-            position: absolute;
-            inset: 0;
-            pointer-events: none;
-        }
-
-        .footer {
-            background-color: var(--footer-bg);
-            display: grid;
-            position: relative;
-            place-content: center;
-            width: 100%;
-            padding: .75em 0
-        }
-
-        .footer::before {
-            position: absolute;
-            display: block;
-            content: "";
-            background-color: var(--main-bg);
-            opacity: .75;
-            filter: blur(1.5rem);
-            width: 100%;
-            height: 100%;
-            inset: 0;
-            -webkit-filter: blur(1.5rem)
-        }
-
-        .footer-logo {
-            display: flex;
-            align-items: center;
-            justify-self: center;
-            z-index: 1
-        }
-
-        .footer-logo h4 {
-            color: #f5fffe;
-            font-size: 1.75rem;
-            z-index: 1
-        }
-
-        .footer .social {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            padding: 1em;
-            z-index: 1
-        }
-
-        .footer .social .facebook,
-        .footer .social .instagram {
-            display: inline-flex;
-            align-items: center;
-            justify-content: left;
-            min-width: 7.75rem;
-            background-color: var(--img-overlay);
-            padding: .15em .5em;
-            margin: .25em auto;
-            border-radius: 10000rem
-        }
-
-        .footer .social .facebook a,
-        .footer .social .instagram a {
-            padding-right: .75em;
-            text-transform: uppercase;
-            font-weight: 600;
-            font-size: .75rem
-        }
-
-        .footer li {
-            list-style-type: none;
-            line-height: 1.5;
-            text-align: left;
-            display: flex;
-            justify-content: left;
-            justify-items: left;
-            position: relative
-        }
-
-        .footer li a {
-            position: relative;
-            display: inline-block;
-            font-size: .75rem;
-            font-weight: 400;
-            padding-left: .5rem
-        }
-
-        .footer .links,
-        .footer .contact {
-            margin: 1em auto 0;
-            max-width: 20ch
-        }
-
-        .footer svg {
-            width: 1rem;
-            height: 1rem;
-            display: inline-block;
-            position: relative;
-            align-self: center
+            opacity: 0.75;
+            pointer-events: all;
         }
     </style>
-    <link rel="stylesheet" href="reset.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -353,8 +166,10 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="hsl(174, 100%, 16%)">
 
     <!-- style and script -->
-    <!-- <link rel="stylesheet" href="main.css"> -->
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" media="screen and (max-width: 28rem)" href="main.css">
+    <link rel="stylesheet" media="screen and (min-width: 28.5rem)" href="desktop-main.css">
+    <link rel="stylesheet" media="screen and (max-width: 28rem)" href="index.css">
+    <link rel="stylesheet" media="screen and (min-width: 28.5rem)" href="desktop-index.css">
 
     <!-- fonts -->
     <link rel=" preconnect" href="https://fonts.googleapis.com">
@@ -618,82 +433,80 @@
             </div>
         </div>
 
-        <div class="footer-container">
-            <div class="links">
-                <ul>
-                    <li>
-                        <svg class="home" width="100%" height="100%" viewBox="0 0 71 71" version="1.1"
-                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                            xml:space="preserve" xmlns:serif="http://www.serif.com/"
-                            style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
-                            <path
-                                d="M58.764,68.36l-45.247,0c-1.785,0 -3.232,-1.577 -3.232,-3.523l0,-28.189l-6.463,-0l30.03,-32.745c0.607,-0.661 1.429,-1.033 2.287,-1.033c0.858,-0 1.68,0.372 2.287,1.033l30.034,32.745l-6.464,-0l-0,28.189c-0,1.946 -1.447,3.523 -3.232,3.523Zm-29.087,-24.665l12.927,0l0,17.618l12.928,0l-0,-28.795l-19.391,-21.141l-19.392,21.141l0,28.795l12.928,0l-0,-17.618Z"
-                                style="fill:#f2f2f2;fill-rule:nonzero;" />
-                        </svg>
-                        <a href="index.html">Home</a>
-                    </li>
-                    <li>
-                        <svg class="info" width="100%" height="100%" viewBox="0 0 46 71" version="1.1"
-                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                            xml:space="preserve" xmlns:serif="http://www.serif.com/"
-                            style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
-                            <path
-                                d="M38.228,66.54l-21.881,0l0,-25.445l-7.293,0l-0,-12.722l21.88,-0l0,25.445l7.294,-0l-0,12.722Zm-7.294,-50.89l-14.587,0l0,-12.722l14.587,-0l0,12.722Z"
-                                style="fill:#f2f2f2;fill-rule:nonzero;" />
-                        </svg>
-                        <a href="about.html">About Us</a>
-                    </li>
-                    <li>
-                        <svg class="phone" width="100%" height="100%" viewBox="0 0 80 80" version="1.1"
-                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                            xml:space="preserve" xmlns:serif="http://www.serif.com/"
-                            style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
-                            <path
-                                d="M71.619,53.399c-5.056,-0 -10.111,-0.835 -15.167,-2.505c-1.263,-0.418 -2.949,-0 -4.212,0.835l-9.269,9.184c-11.796,-5.845 -21.485,-15.864 -27.805,-27.553l9.269,-9.184c1.264,-1.253 1.685,-2.922 0.842,-4.175c-1.264,-4.592 -2.106,-9.602 -2.106,-14.611c-0,-2.505 -1.685,-4.175 -4.213,-4.175l-14.745,0c-2.528,0 -4.213,1.67 -4.213,4.175c0,39.242 32.018,70.969 71.619,70.969c2.528,0 4.213,-1.67 4.213,-4.174l-0,-14.612c-0,-2.505 -1.685,-4.174 -4.213,-4.174Zm-4.213,-14.612l8.426,0c-0,-20.873 -16.852,-37.572 -37.916,-37.572l-0,8.35c16.43,-0 29.49,12.941 29.49,29.222Zm-16.852,0l8.426,0c0,-11.689 -9.268,-20.873 -21.064,-20.873l-0,8.349c7.162,0 12.638,5.427 12.638,12.524Z"
-                                style="fill:#fff;" />
-                        </svg>
-                        <a href="contact.html">Contact Us</a>
-                    </li>
-                    <!-- <li>
+        <div class="links">
+            <ul>
+                <li>
+                    <svg class="home" width="100%" height="100%" viewBox="0 0 71 71" version="1.1"
+                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                        xml:space="preserve" xmlns:serif="http://www.serif.com/"
+                        style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+                        <path
+                            d="M58.764,68.36l-45.247,0c-1.785,0 -3.232,-1.577 -3.232,-3.523l0,-28.189l-6.463,-0l30.03,-32.745c0.607,-0.661 1.429,-1.033 2.287,-1.033c0.858,-0 1.68,0.372 2.287,1.033l30.034,32.745l-6.464,-0l-0,28.189c-0,1.946 -1.447,3.523 -3.232,3.523Zm-29.087,-24.665l12.927,0l0,17.618l12.928,0l-0,-28.795l-19.391,-21.141l-19.392,21.141l0,28.795l12.928,0l-0,-17.618Z"
+                            style="fill:#f2f2f2;fill-rule:nonzero;" />
+                    </svg>
+                    <a href="index.html">Home</a>
+                </li>
+                <li>
+                    <svg class="info" width="100%" height="100%" viewBox="0 0 46 71" version="1.1"
+                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                        xml:space="preserve" xmlns:serif="http://www.serif.com/"
+                        style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+                        <path
+                            d="M38.228,66.54l-21.881,0l0,-25.445l-7.293,0l-0,-12.722l21.88,-0l0,25.445l7.294,-0l-0,12.722Zm-7.294,-50.89l-14.587,0l0,-12.722l14.587,-0l0,12.722Z"
+                            style="fill:#f2f2f2;fill-rule:nonzero;" />
+                    </svg>
+                    <a href="about.html">About Us</a>
+                </li>
+                <li>
+                    <svg class="phone" width="100%" height="100%" viewBox="0 0 80 80" version="1.1"
+                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                        xml:space="preserve" xmlns:serif="http://www.serif.com/"
+                        style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+                        <path
+                            d="M71.619,53.399c-5.056,-0 -10.111,-0.835 -15.167,-2.505c-1.263,-0.418 -2.949,-0 -4.212,0.835l-9.269,9.184c-11.796,-5.845 -21.485,-15.864 -27.805,-27.553l9.269,-9.184c1.264,-1.253 1.685,-2.922 0.842,-4.175c-1.264,-4.592 -2.106,-9.602 -2.106,-14.611c-0,-2.505 -1.685,-4.175 -4.213,-4.175l-14.745,0c-2.528,0 -4.213,1.67 -4.213,4.175c0,39.242 32.018,70.969 71.619,70.969c2.528,0 4.213,-1.67 4.213,-4.174l-0,-14.612c-0,-2.505 -1.685,-4.174 -4.213,-4.174Zm-4.213,-14.612l8.426,0c-0,-20.873 -16.852,-37.572 -37.916,-37.572l-0,8.35c16.43,-0 29.49,12.941 29.49,29.222Zm-16.852,0l8.426,0c0,-11.689 -9.268,-20.873 -21.064,-20.873l-0,8.349c7.162,0 12.638,5.427 12.638,12.524Z"
+                            style="fill:#fff;" />
+                    </svg>
+                    <a href="contact.html">Contact Us</a>
+                </li>
+                <!-- <li>
                             <a href="#">Products</a>
                         </li> -->
-                </ul>
-            </div>
-            <div class="contact">
-                <ul>
-                    <li>
-                        <svg class="location" width="100%" height="100%" viewBox="0 0 59 80" version="1.1"
-                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                            xml:space="preserve" xmlns:serif="http://www.serif.com/"
-                            style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
-                            <path
-                                d="M26.069,2.393c-14.526,-0 -26.069,11.647 -26.069,26.3c0,19.538 26.069,48.844 26.069,48.844c0,-0 26.065,-29.306 26.065,-48.844c0,-14.653 -11.543,-26.3 -26.069,-26.3l0.004,-0Zm0,35.693c-5.215,0 -9.31,-4.133 -9.31,-9.393c-0,-5.26 4.095,-9.393 9.31,-9.393c5.212,0 9.311,4.133 9.311,9.393c-0,5.26 -4.099,9.393 -9.311,9.393Z"
-                                style="fill:#fff;" />
-                        </svg>
-                        <a href="#">605 Currie road, Essenwood, Durban, 4001</a>
-                    </li>
-                    <li>
-                        <svg class="whatsapp" height="100%" viewBox="-23 -21 682 682.66669" width="100%"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="m544.386719 93.007812c-59.875-59.945312-139.503907-92.9726558-224.335938-93.007812-174.804687 0-317.070312 142.261719-317.140625 317.113281-.023437 55.894531 14.578125 110.457031 42.332032 158.550781l-44.992188 164.335938 168.121094-44.101562c46.324218 25.269531 98.476562 38.585937 151.550781 38.601562h.132813c174.785156 0 317.066406-142.273438 317.132812-317.132812.035156-84.742188-32.921875-164.417969-92.800781-224.359376zm-224.335938 487.933594h-.109375c-47.296875-.019531-93.683594-12.730468-134.160156-36.742187l-9.621094-5.714844-99.765625 26.171875 26.628907-97.269531-6.269532-9.972657c-26.386718-41.96875-40.320312-90.476562-40.296875-140.28125.054688-145.332031 118.304688-263.570312 263.699219-263.570312 70.40625.023438 136.589844 27.476562 186.355469 77.300781s77.15625 116.050781 77.132812 186.484375c-.0625 145.34375-118.304687 263.59375-263.59375 263.59375zm144.585938-197.417968c-7.921875-3.96875-46.882813-23.132813-54.148438-25.78125-7.257812-2.644532-12.546875-3.960938-17.824219 3.96875-5.285156 7.929687-20.46875 25.78125-25.09375 31.066406-4.625 5.289062-9.242187 5.953125-17.167968 1.984375-7.925782-3.964844-33.457032-12.335938-63.726563-39.332031-23.554687-21.011719-39.457031-46.960938-44.082031-54.890626-4.617188-7.9375-.039062-11.8125 3.476562-16.171874 8.578126-10.652344 17.167969-21.820313 19.808594-27.105469 2.644532-5.289063 1.320313-9.917969-.664062-13.882813-1.976563-3.964844-17.824219-42.96875-24.425782-58.839844-6.4375-15.445312-12.964843-13.359374-17.832031-13.601562-4.617187-.230469-9.902343-.277344-15.1875-.277344-5.28125 0-13.867187 1.980469-21.132812 9.917969-7.261719 7.933594-27.730469 27.101563-27.730469 66.105469s28.394531 76.683594 32.355469 81.972656c3.960937 5.289062 55.878906 85.328125 135.367187 119.648438 18.90625 8.171874 33.664063 13.042968 45.175782 16.695312 18.984374 6.03125 36.253906 5.179688 49.910156 3.140625 15.226562-2.277344 46.878906-19.171875 53.488281-37.679687 6.601563-18.511719 6.601563-34.375 4.617187-37.683594-1.976562-3.304688-7.261718-5.285156-15.183593-9.253906zm0 0"
-                                fill-rule="evenodd" fill="#fff" />
-                        </svg>
-                        <a href="wa.me//+27765476065">+27 76 547 6065</a>
-                    </li>
-                    <li>
-                        <svg class="mail" width="100%" height="100%" viewBox="0 0 88 71" version="1.1"
-                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                            xml:space="preserve" xmlns:serif="http://www.serif.com/"
-                            style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
-                            <path
-                                d="M75.832,1.652l-67.406,-0c-4.634,-0 -8.426,3.757 -8.426,8.349l-0,50.096c-0,4.592 3.792,8.35 8.426,8.35l67.406,-0c4.634,-0 8.425,-3.758 8.425,-8.35l0,-50.096c0,-4.592 -3.791,-8.349 -8.425,-8.349Zm-0,58.445l-8.426,0l-0,-36.737l-25.277,15.864l-25.278,-15.864l0,36.737l-8.425,0l-0,-50.096l5.055,0l28.648,17.534l28.647,-17.534l5.056,0l-0,50.096Z"
-                                style="fill:#fff;" />
-                        </svg>
-                        <a href="mailto:buyafuthi0@gmail.com">buyafuthi0@gmail.com</a>
-                    </li>
-                </ul>
-            </div>
+            </ul>
+        </div>
+        <div class="contact">
+            <ul>
+                <li>
+                    <svg class="location" width="100%" height="100%" viewBox="0 0 59 80" version="1.1"
+                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                        xml:space="preserve" xmlns:serif="http://www.serif.com/"
+                        style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+                        <path
+                            d="M26.069,2.393c-14.526,-0 -26.069,11.647 -26.069,26.3c0,19.538 26.069,48.844 26.069,48.844c0,-0 26.065,-29.306 26.065,-48.844c0,-14.653 -11.543,-26.3 -26.069,-26.3l0.004,-0Zm0,35.693c-5.215,0 -9.31,-4.133 -9.31,-9.393c-0,-5.26 4.095,-9.393 9.31,-9.393c5.212,0 9.311,4.133 9.311,9.393c-0,5.26 -4.099,9.393 -9.311,9.393Z"
+                            style="fill:#fff;" />
+                    </svg>
+                    <a href="#">605 Currie road, Essenwood, Durban, 4001</a>
+                </li>
+                <li>
+                    <svg class="whatsapp" height="100%" viewBox="-23 -21 682 682.66669" width="100%"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="m544.386719 93.007812c-59.875-59.945312-139.503907-92.9726558-224.335938-93.007812-174.804687 0-317.070312 142.261719-317.140625 317.113281-.023437 55.894531 14.578125 110.457031 42.332032 158.550781l-44.992188 164.335938 168.121094-44.101562c46.324218 25.269531 98.476562 38.585937 151.550781 38.601562h.132813c174.785156 0 317.066406-142.273438 317.132812-317.132812.035156-84.742188-32.921875-164.417969-92.800781-224.359376zm-224.335938 487.933594h-.109375c-47.296875-.019531-93.683594-12.730468-134.160156-36.742187l-9.621094-5.714844-99.765625 26.171875 26.628907-97.269531-6.269532-9.972657c-26.386718-41.96875-40.320312-90.476562-40.296875-140.28125.054688-145.332031 118.304688-263.570312 263.699219-263.570312 70.40625.023438 136.589844 27.476562 186.355469 77.300781s77.15625 116.050781 77.132812 186.484375c-.0625 145.34375-118.304687 263.59375-263.59375 263.59375zm144.585938-197.417968c-7.921875-3.96875-46.882813-23.132813-54.148438-25.78125-7.257812-2.644532-12.546875-3.960938-17.824219 3.96875-5.285156 7.929687-20.46875 25.78125-25.09375 31.066406-4.625 5.289062-9.242187 5.953125-17.167968 1.984375-7.925782-3.964844-33.457032-12.335938-63.726563-39.332031-23.554687-21.011719-39.457031-46.960938-44.082031-54.890626-4.617188-7.9375-.039062-11.8125 3.476562-16.171874 8.578126-10.652344 17.167969-21.820313 19.808594-27.105469 2.644532-5.289063 1.320313-9.917969-.664062-13.882813-1.976563-3.964844-17.824219-42.96875-24.425782-58.839844-6.4375-15.445312-12.964843-13.359374-17.832031-13.601562-4.617187-.230469-9.902343-.277344-15.1875-.277344-5.28125 0-13.867187 1.980469-21.132812 9.917969-7.261719 7.933594-27.730469 27.101563-27.730469 66.105469s28.394531 76.683594 32.355469 81.972656c3.960937 5.289062 55.878906 85.328125 135.367187 119.648438 18.90625 8.171874 33.664063 13.042968 45.175782 16.695312 18.984374 6.03125 36.253906 5.179688 49.910156 3.140625 15.226562-2.277344 46.878906-19.171875 53.488281-37.679687 6.601563-18.511719 6.601563-34.375 4.617187-37.683594-1.976562-3.304688-7.261718-5.285156-15.183593-9.253906zm0 0"
+                            fill-rule="evenodd" fill="#fff" />
+                    </svg>
+                    <a href="wa.me//+27765476065">+27 76 547 6065</a>
+                </li>
+                <li>
+                    <svg class="mail" width="100%" height="100%" viewBox="0 0 88 71" version="1.1"
+                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                        xml:space="preserve" xmlns:serif="http://www.serif.com/"
+                        style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+                        <path
+                            d="M75.832,1.652l-67.406,-0c-4.634,-0 -8.426,3.757 -8.426,8.349l-0,50.096c-0,4.592 3.792,8.35 8.426,8.35l67.406,-0c4.634,-0 8.425,-3.758 8.425,-8.35l0,-50.096c0,-4.592 -3.791,-8.349 -8.425,-8.349Zm-0,58.445l-8.426,0l-0,-36.737l-25.277,15.864l-25.278,-15.864l0,36.737l-8.425,0l-0,-50.096l5.055,0l28.648,17.534l28.647,-17.534l5.056,0l-0,50.096Z"
+                            style="fill:#fff;" />
+                    </svg>
+                    <a href="mailto:buyafuthi0@gmail.com">buyafuthi0@gmail.com</a>
+                </li>
+            </ul>
         </div>
     </footer>
 
