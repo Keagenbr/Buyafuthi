@@ -181,3 +181,12 @@ Footer
   position: relative;
   align-self: center;
 }
+
+@media (min-width: 1000px) {
+  .nav {
+    padding: 0 20%;
+  }
+  .footer {
+    padding: 0 20%;
+  }
+}

@@ -3,7 +3,7 @@
 
 <head>
     <style>
-        *:where(:not(iframe, anvas, img, svg, video):not(svg *)) {
+        *:where(:not(iframe, canvas, img, svg, video):not(svg *)) {
             all: unset;
             display: revert
         }
@@ -166,10 +166,10 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="hsl(174, 100%, 16%)">
 
     <!-- style and script -->
-    <link rel="stylesheet" media="screen and (max-width: 28rem)" href="main.css">
-    <link rel="stylesheet" media="screen and (min-width: 28.5rem)" href="desktop-main.css">
-    <link rel="stylesheet" media="screen and (max-width: 28rem)" href="index.css">
-    <link rel="stylesheet" media="screen and (min-width: 28.5rem)" href="desktop-index.css">
+    <link rel="stylesheet" media="screen and (max-width: 28rem)" href="/main.css">
+    <link rel="stylesheet" media="screen and (min-width: 28.5rem)" href="/desktop-main.css">
+    <link rel="stylesheet" media="screen and (max-width: 28rem)" href="/index.css">
+    <link rel="stylesheet" media="screen and (min-width: 28.5rem)" href="/desktop-index.css">
 
     <!-- fonts -->
     <link rel=" preconnect" href="https://fonts.googleapis.com">
@@ -210,7 +210,7 @@
 
     <nav class="nav">
         <a href="/index.html" class="nav-logo logo-main">
-            <img src="assets/Logo.svg" alt="Logo - hands halding up bottle" class="logo">
+            <img src="assets/Logo.svg" alt="Logo - hands holding up bottle" class="logo">
 
             <h4>Buyafuthi</h4>
         </a>
@@ -250,56 +250,65 @@
         <h2>Take A Look at Our Products</h2>
         <div class="products-gallary">
             <div class="product">
-                <img src="assets/model 01.png" alt="Buyafuthi Long pants side red" class="img">
-                <img src="assets/model 010.png" alt="Buyafuthi Long pants front red" class="img">
+                <img src="assets/model 01.png" width="100" height="125" alt="Buyafuthi Long pants side red" class="img">
+                <img src="assets/model 010.png" width="125" height="125" alt="Buyafuthi Long pants front red"
+                    class="img">
             </div>
             <div class="product">
-                <img src="assets/model 02.png" alt="Buyafuthi Long pants side light-blue" class="img">
-                <img src="assets/model 020.png" alt="Buyafuthi Long pants front light-blue" class="img">
+                <img src="assets/model 02.png" width="100" height="125" alt="Buyafuthi Long pants side light-blue"
+                    class="img">
+                <img src="assets/model 020.png" width="130" height="130" alt="Buyafuthi Long pants front light-blue"
+                    class="img">
             </div>
             <div class="product">
-                <img loading="lazy" src="assets/model 03.png" alt="Buyafuthi short pants side dark-blue" class="img">
-                <img loading="lazy" src="assets/model 030.png" alt="Buyafuthi short pants front dark-blue" class="img">
+                <img loading="lazy" src="assets/model 03.png" width="100" height="125"
+                    alt="Buyafuthi short pants side dark-blue" class="img">
+                <img loading="lazy" src="assets/model 030.png" width="130" height="120"
+                    alt="Buyafuthi short pants front dark-blue" class="img">
             </div>
             <div class="product">
-                <img loading="lazy" src="assets/model 04.png" alt="Buyafuthi short pants side Light=blue" class="img">
-                <img loading="lazy" src="assets/model 040.png" alt="Buyafuthi short pants front Light-blue" class="img">
+                <img loading="lazy" src="assets/model 04.png" width="100" height="125"
+                    alt="Buyafuthi short pants side Light=blue" class="img">
+                <img loading="lazy" src="assets/model 040.png" width="125" height="125"
+                    alt="Buyafuthi short pants front Light-blue" class="img">
             </div>
             <div class="product g4">
-                <img loading="lazy" src="assets/Wastures 01.png" alt="Buyafuthi short pants close up and side grey"
-                    class="img">
-                <img loading="lazy" src="assets/Wastures 010.png" alt="Buyafuthi short pants close up and side grey"
-                    class="img">
-                <img loading="lazy" src="assets/Wastures 02.png" alt="Buyafuthi short pants close up and side grey"
-                    class="img">
-                <img loading="lazy" src="assets/Wastures 020.png" alt="Buyafuthi short pants close up and side grey"
-                    class="img">
+                <img loading="lazy" src="assets/Wastures 01.png" width="100"
+                    alt="Buyafuthi short pants close up and side grey" class="img">
+                <img loading="lazy" src="assets/Wastures 010.png" width="100"
+                    alt="Buyafuthi short pants close up and side grey" class="img">
+                <img loading="lazy" src="assets/Wastures 02.png" width="100"
+                    alt="Buyafuthi short pants close up and side grey" class="img">
+                <img loading="lazy" src="assets/Wastures 020.png" width="100"
+                    alt="Buyafuthi short pants close up and side grey" class="img">
             </div>
         </div>
     </section>
 
     <!-- Collaborations -->
 
-    <section class="collaborations" aria-label="Collabrations">
+    <section class="collaborations" aria-label="Collaborations">
         <h2>Collaborations</h2>
-        <p>Below are currunt/previous collabrations as well as stores that you can fin our active-wear in. Check out
-            thier pages.</p>
+        <p>Below are current/previous collaborations as well as stores that you can fin our active-wear in. Check out
+            their pages.</p>
 
         <div class="collaborations-items">
             <figure class="the-refill-den">
-                <img loading="lazy" src="assets/Collab-The-refill-den.png" alt="The Refill Den" class="img">
+                <img loading="lazy" src="assets/Collab-The-refill-den.png" width="150" height="100" alt="The Refill Den"
+                    class="img">
                 <figcaption>
                     The Refill Den
                 </figcaption>
             </figure>
             <figure class="giftex">
-                <img loading="lazy" src="assets/Collab-Giftex.png" alt="Giftex" class="img">
+                <img loading="lazy" src="assets/Collab-Giftex.png" width="150" height="100" alt="Giftex" class="img">
                 <figcaption>
                     Giftex
                 </figcaption>
             </figure>
             <figure class="philocaly-trail">
-                <img loading="lazy" src="assets/Collab-philocaly-trail.png" alt="Philocaly Trail" class="img">
+                <img loading="lazy" src="assets/Collab-philocaly-trail.png" width="150" height="100"
+                    alt="Philocaly Trail" class="img">
                 <figcaption>
                     Philocaly Trail
                 </figcaption>
@@ -316,16 +325,17 @@
 
         <div class="PTF-items">
             <figure>
-                <img src="assets/PTF Bottles.png" alt="Bottles" class="img">
+                <img src="assets/PTF Bottles.png" width="150" height="100" alt="Bottles" class="img">
                 <figcaption>
                     <h3>step 1</h3>
                     <p>
-                        Post-consumer plastic bottles are collected at reycling facilties.
+                        Post-consumer plastic bottles are collected at recycling facilities.
                     </p>
                 </figcaption>
             </figure>
             <figure>
-                <img loading="lazy" src="assets/PTF Blue-Flakes.png" alt="Blue Flakes" class="img">
+                <img loading="lazy" src="assets/PTF Blue-Flakes.png" width="150" height="100" alt="Blue Flakes"
+                    class="img">
                 <figcaption>
                     <h3>step 2</h3>
                     <p>
@@ -334,7 +344,8 @@
                 </figcaption>
             </figure>
             <figure>
-                <img loading="lazy" src="assets/PTF Melted Bottles.png" alt="Melted Bottles" class="img">
+                <img loading="lazy" src="assets/PTF Melted Bottles.png" width="150" height="100" alt="Melted Bottles"
+                    class="img">
                 <figcaption>
                     <h3>step 3</h3>
                     <p>
@@ -343,7 +354,7 @@
                 </figcaption>
             </figure>
             <figure>
-                <img loading="lazy" src="assets/PTF Yarn.png" alt="Yarn" class="img">
+                <img loading="lazy" src="assets/PTF Yarn.png" width="150" height="100" alt="Yarn" class="img">
                 <figcaption>
                     <h3>step 4</h3>
                     <p>
@@ -352,7 +363,7 @@
                 </figcaption>
             </figure>
             <figure>
-                <img loading="lazy" src="assets/PTF Fabric.png" alt="Fabric" class="img">
+                <img loading="lazy" src="assets/PTF Fabric.png" width="150" height="100" alt="Fabric" class="img">
                 <figcaption>
                     <h3>step 5</h3>
                     <p>
@@ -361,7 +372,8 @@
                 </figcaption>
             </figure>
             <figure>
-                <img loading="lazy" src="assets/PTF Pants.png" alt="Buyafuthi pants" class="img">
+                <img loading="lazy" src="assets/PTF Pants.png" width="150" height="100" alt="Buyafuthi pants"
+                    class="img">
                 <figcaption>
                     <h3>step 6</h3>
                     <p>
