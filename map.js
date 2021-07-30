@@ -4,6 +4,7 @@ function initMap() {
   let options = {
     center: pos,
     zoom: 14,
+    mapId: 'c9b6285d2b47dead',
   };
 
   let map = new google.maps.Map(document.getElementById("map"), options);
