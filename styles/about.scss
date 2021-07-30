@@ -1,9 +1,36 @@
 /*====
 ABOUT SECTION
 =====*/
-.header-about {
+.header {
+  display: grid;
+  place-items: center;
+  position: relative;
+  margin: 3em 0 2rem;
+  padding: 4rem 2%;
+  background-color: var(--img-overlay);
   background-image: url(assets/Header-About.png);
-  margin-top: 4em;
+  background-position: center 1.5em;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-blend-mode: multiply;
+}
+.header h1 {
+  color: var(--txt-clr-neutral);
+  font-family: var(--font);
+  font-size: clamp(2rem, 6vw, 4rem);
+  font-weight: 800;
+  text-transform: uppercase;
+  text-align: center;
+  max-width: 15ch;
+  line-height: 0.85;
+  padding-bottom: 0.5em;
+}
+.header img {
+  opacity: 0;
+  position: absolute;
+
+  inset: 0;
+  pointer-events: none;
 }
 .who-we-are,
 .name-and-logo,
