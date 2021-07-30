@@ -1,18 +1,24 @@
 /*===
 Contact page
 ===*/
-.header-contact {
+.header {
+  margin: 6em 10% 2em;
   background-color: #fcfcfc;
   background-image: none;
+  display: grid;
+  place-items: center;
 }
-.header-contact h1,
-.header-contact p {
+.header h1,
+.header p {
   color: var(--txt-clr-contrast);
 }
-.header-contact h1 {
+.header h1 {
   position: relative;
+  max-width: max-content;
+  font-size: 2rem;
+  font-weight: 600;
 }
-.header-contact h1::after {
+.header h1::after {
   content: "";
   display: block;
   position: absolute;
@@ -20,9 +26,11 @@ Contact page
   width: 100%;
   background: var(--gradient);
 }
-.header-contact p {
+.header p {
   font-weight: 400;
+  font-size: 1.09rem;
   line-height: 1.25;
+  max-width: 30ch;
 }
 
 .form {
@@ -83,6 +91,7 @@ Available section
 .available p {
   line-height: 1.25;
   margin: 1em 0;
+  text-align: center;
 }
 .available #map {
   background-image: url(assets/Google-Maps.png);
