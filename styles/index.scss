@@ -44,13 +44,14 @@ HOME SECTION
   display: flex;
   flex-direction: column;
   place-items: center;
+  place-content: center;
 }
-.products-gallary {
+.products-gallery {
   display: grid;
   width: 100%;
   margin-top: 1rem;
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-  gap: 0.5em;
+  // gap: 0.5em;
   place-content: center;
   place-items: center;
 }
